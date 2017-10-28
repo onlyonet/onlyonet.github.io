@@ -7,4 +7,11 @@ $(document).ready(function() {
     }, 1250, 'easeInOutExpo');
     event.preventDefault();
   });
+
+  var url = window.location.href;
+  if(url.indexOf('?thankyou=1') != -1) {
+    $('#thankYouModal').modal('show');
+    // Remove the query params
+    history.pushState(null, null, '/');
+  }
 });
